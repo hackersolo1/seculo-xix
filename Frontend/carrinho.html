@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho — Livraria Século XIX</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="CSS/carrinho.css" />
+</head>
+
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        Livraria Século XIX
+        <span>Machado de Assis &amp; Contemporâneos</span>
+      </a>
+
+      <!-- Mobile -->
+      <div class="nav__mobile-acoes">
+        <button class="nav__icone-btn" aria-label="Carrinho">
+          <span class="material-symbols-outlined" style="color: var(--cor-acento)">shopping_cart</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ CONTEÚDO ══ -->
+  <main>
+    <div class="pagina__conteudo">
+
+      <!-- Cabeçalho -->
+      <header class="cabecalho-pagina">
+        <h1 class="cabecalho-pagina__titulo">Seu Carrinho de Compras</h1>
+        <p class="cabecalho-pagina__subtitulo">Revise os itens antes de finalizar o pedido.</p>
+      </header>
+
+      <div class="carrinho-grid">
+
+        <!-- ══ LISTA DE ITENS ══ -->
+        <div class="lista-itens">
+
+          <div class="empty-cart">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <p class="empty-cart__texto">Seu carrinho esta vazio!</p>
+            <a href="index.html" class="empty-cart__link">Que tal escolher um livro?</a>
+          </div>
+
+
+        </div><!-- /lista-itens -->
+
+
+      </div><!-- /carrinho-grid -->
+    </div>
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="rodape">
+    <div class="rodape__inner">
+      <div class="rodape__marca">
+        <span class="rodape__logo">Livraria Século XIX</span>
+        <p class="rodape__descricao">O seu refúgio para a literatura realista e naturalista brasileira.</p>
+      </div>
+
+      <div class="rodape__links">
+        <a class="rodape__link" href="sobre.html">Sobre o Machado</a>>
+      </div>
+    </div>
+  </footer>
+  <script src="JavaScript/carrinho.js"></script>
+</body>
+
+</html>
