@@ -171,7 +171,27 @@ document.addEventListener('DOMContentLoaded', () => {
         livrosContainer.appendChild(livroCard);
     });
 
+    const cartBtn = document.querySelector('.btn-carrinho');
+    let livroSelecionado = null;
+
     function abrirModal(livro) {
+        livroSelecionado = livro;
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) ?? [];
+        if (carrinho.some(item => item.id === livro.id)) {
+            cartBtn.innerHTML = `
+                <span class="material-symbols-outlined btn-carrinho__icone">check</span>
+                Item já no carrinho!
+            `;
+            cartBtn.style.backgroundColor = 'green';
+            cartBtn.disabled = true;
+        } else {
+            cartBtn.innerHTML = `
+                <span class="material-symbols-outlined btn-carrinho__icone">add_shopping_cart</span>
+                Adicionar ao Carrinho
+            `;
+            cartBtn.style.backgroundColor = 'var(--primary)';
+            cartBtn.disabled = false;
+        }
         document.querySelector('.bookCover').src = livro.urlLink;
         document.querySelector('.produto-detalhes__titulo').textContent = livro.titulo;
         document.querySelector('.produto-detalhes__autor span').textContent = livro.autor;
@@ -188,10 +208,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── ADICIONAR AO CARRINHO ──────────────────────────────
-    document.querySelector('.btn-carrinho').addEventListener('click', () => {
+    cartBtn.addEventListener('click', () => {
         const livroId = document.querySelector('.btn-carrinho__icone').getAttribute('b-id');
         const livro = livros.find(livro => livro.id === parseInt(livroId));
-        adicionarAoCarrinho(livro);
+        adicionarAoCarrinho(livroSelecionado);
+        cartBtn.innerHTML = `
+                <span class="material-symbols-outlined btn-carrinho__icone">check</span>
+                Item adicionado ao carrinho!
+            `;
+        cartBtn.style.backgroundColor = 'green';
+        cartBtn.disabled = true;
     });
 
     document.querySelector('.book-popup__close').addEventListener('click', () => {
