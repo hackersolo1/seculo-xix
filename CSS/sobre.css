@@ -58,12 +58,24 @@ body {
     justify-content: space-between;
 }
 
+
 .nav__logo {
     font-family: var(--font-display);
     font-size: 22px;
     font-weight: 900;
     color: var(--primary-container);
     text-decoration: none;
+}
+
+.nav__inner div {
+    display: flex;
+    gap: 24px;
+}
+
+.nav__inner div a {
+    text-decoration: none;
+    color: var(--on-surface);
+    font-weight: 500;
 }
 
 /* HERO SECTION */
@@ -117,6 +129,16 @@ body {
     background: var(--outline-variant);
 }
 
+.secao__p1 {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--primary-container);
+}
+
+.secao__p2 {
+    margin-top: 20px;
+}
+
 .biografia-grid {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -167,6 +189,17 @@ body {
     max-width: var(--max-w);
     margin: 0 auto;
     text-align: center;
+}
+
+.rodape__p1 {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.rodape__p2 {
+    font-size: 14px;
+    color: var(--on-surface-variant);
+    margin-top: 8px;
 }
 
 @media (max-width: 768px) {
