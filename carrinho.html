@@ -7,60 +7,80 @@
   <title>Carrinho — Livraria Século XIX</title>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1"
     rel="stylesheet" />
 
+  <link rel="stylesheet" href="CSS/index.css" />
   <link rel="stylesheet" href="CSS/carrinho.css" />
 </head>
 
 <body>
 
   <!-- ══ NAVBAR ══ -->
-  <nav class="nav">
+  <header class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
-        Livraria Século XIX
-        <span>Machado de Assis &amp; Contemporâneos</span>
-      </a>
+      <div class="nav__esquerda">
+        <a href="index.html" class="nav__logo">Livraria Século XIX</a>
+        <div class="nav__links">
+          <a class="nav__link" href="index.html">Início</a>
+          <a class="nav__link" href="busca.html">Gêneros</a>
+          <a class="nav__link" href="sobre.html">Sobre o Machado</a>
+        </div>
+      </div>
 
-      <!-- Mobile -->
-      <div class="nav__mobile-acoes">
+      <div class="nav__acoes">
         <button class="nav__icone-btn" aria-label="Carrinho">
-          <span class="material-symbols-outlined" style="color: var(--cor-acento)">shopping_cart</span>
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span class="nav__badge" id="badge-carrinho">0</span>
         </button>
       </div>
     </div>
-  </nav>
+  </header>
 
   <!-- ══ CONTEÚDO ══ -->
-  <main>
-    <div class="pagina__conteudo">
+  <main class="pagina">
 
-      <!-- Cabeçalho -->
-      <header class="cabecalho-pagina">
-        <h1 class="cabecalho-pagina__titulo">Seu Carrinho de Compras</h1>
-        <p class="cabecalho-pagina__subtitulo">Revise os itens antes de finalizar o pedido.</p>
-      </header>
+    <!-- Cabeçalho -->
+    <header class="carrinho-header">
+      <h1 class="carrinho-header__titulo">Seu Carrinho</h1>
+      <p class="carrinho-header__subtitulo">Revise os itens antes de finalizar o pedido.</p>
+    </header>
 
-      <div class="carrinho-grid">
+    <div class="carrinho-grid">
 
-        <!-- ══ LISTA DE ITENS ══ -->
-        <div class="lista-itens">
+      <!-- ══ LISTA DE ITENS ══ -->
+      <div class="lista-itens">
 
-          <div class="empty-cart">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <p class="empty-cart__texto">Seu carrinho esta vazio!</p>
-            <a href="index.html" class="empty-cart__link">Que tal escolher um livro?</a>
+        <div class="empty-cart">
+          <span class="material-symbols-outlined empty-cart__icone">shopping_cart</span>
+          <p class="empty-cart__texto">Seu carrinho está vazio!</p>
+          <a href="index.html" class="empty-cart__link">Que tal escolher um livro?</a>
+        </div>
+
+      </div><!-- /lista-itens -->
+
+      <!-- ══ RESUMO ══ -->
+      <aside class="resumo" id="resumo-pedido" style="display:none;">
+        <h2 class="resumo__titulo">Resumo do Pedido</h2>
+        <div class="resumo__linhas">
+          <div class="resumo__linha">
+            <span>Subtotal</span>
+            <span id="spanSubtotal">R$ 0,00</span>
           </div>
+          <div class="resumo__linha resumo__linha--total">
+            <span>Total</span>
+            <span id="spanTotal">R$ 0,00</span>
+          </div>
+        </div>
+        <button class="btn-checkout">
+          <span class="material-symbols-outlined">lock</span>
+          Finalizar Compra
+        </button>
+      </aside>
 
-
-        </div><!-- /lista-itens -->
-
-
-      </div><!-- /carrinho-grid -->
-    </div>
+    </div><!-- /carrinho-grid -->
   </main>
 
   <!-- ══ FOOTER ══ -->
@@ -70,12 +90,14 @@
         <span class="rodape__logo">Livraria Século XIX</span>
         <p class="rodape__descricao">O seu refúgio para a literatura realista e naturalista brasileira.</p>
       </div>
-
       <div class="rodape__links">
-        <a class="rodape__link" href="sobre.html">Sobre o Machado</a>>
+        <a class="rodape__link" href="index.html">Início</a>
+        <a class="rodape__link" href="busca.html">Gêneros</a>
+        <a class="rodape__link" href="sobre.html">Sobre o Machado</a>
       </div>
     </div>
   </footer>
+
   <script src="JavaScript/carrinho.js"></script>
 </body>
 
