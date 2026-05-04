@@ -1,6 +1,3 @@
-// carrinho.js — roda APENAS na página carrinho.html
-// O DOMContentLoaded é exatamente a "função que detecta quando a página carregou" que você queria! 😄
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const listaItens = document.querySelector('.lista-itens');
