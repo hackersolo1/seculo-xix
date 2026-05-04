@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── RENDERIZAR CARDS NA HOME ───────────────────────────
     async function renderList() {
         try {
-            const res = await fetch('/Dados/livros.json');
+            const res = await fetch('Dados/livros.json');
             const data = await res.json();
             livros = data.livros;
             livros.forEach(livro => {
