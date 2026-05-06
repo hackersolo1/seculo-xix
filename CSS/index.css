@@ -773,28 +773,37 @@ img {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    padding: 100px;
+    padding: var(--sp-md);
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .pagina2 {
     position: relative;
     background: white;
     max-width: var(--max-w);
+    width: 100%;
     margin: 0 auto;
     padding: var(--sp-xl) var(--sp-lg);
-    overflow-y: scroll;
-    height: 85vh;
+    overflow-y: auto;
+    max-height: 90vh;
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-2xl);
+    box-shadow: var(--shadow-lg);
 }
 
 /* BOTÃO FECHAR */
 .book-popup__close {
+    position: absolute;
+    top: var(--sp-md);
+    right: var(--sp-md);
     font-size: 2rem;
     cursor: pointer;
     transition: all .2s ease-in-out;
+    z-index: 10;
+    background: white;
+    border-radius: 50%;
 }
 
 .book-popup__close:hover {
@@ -803,11 +812,18 @@ img {
 
 /* HERO DO PRODUTO */
 .produto-hero {
-    display: flex;
-    gap: var(--sp-lg);
-    margin-bottom: var(--sp-lg);
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--sp-2xl);
+    margin-bottom: var(--sp-2xl);
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .produto-hero {
+        grid-template-columns: 1fr;
+        gap: var(--sp-lg);
+    }
 }
 
 /* GALERIA */
@@ -823,6 +839,9 @@ img {
 
 .galeria__principal img {
     max-height: 420px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     box-shadow: var(--shadow-xl);
     border-radius: 20px;
 }
@@ -868,6 +887,7 @@ img {
 .produto-detalhes {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .produto-detalhes__tag {
@@ -983,8 +1003,8 @@ img {
 /* METADADOS */
 .produto-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--sp-xl);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--sp-lg);
     padding-top: var(--sp-xl);
     border-top: 1px solid var(--outline-variant);
 }
@@ -1294,10 +1314,6 @@ img {
 
     .mais-vendidos__grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .produto-hero {
-        grid-template-columns: 1fr;
     }
 
     .produto-meta {
