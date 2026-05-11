@@ -62,18 +62,7 @@
       </div><!-- /lista-itens -->
 
       <!-- ══ RESUMO ══ -->
-      <aside class="resumo" id="resumo-pedido" style="display:none;">
-        <h2 class="resumo__titulo">Resumo do Pedido</h2>
-        <div class="resumo__linhas">
-          <div class="resumo__linha">
-            <span>Subtotal</span>
-            <span id="spanSubtotal">R$ 0,00</span>
-          </div>
-          <div class="resumo__linha resumo__linha--total">
-            <span>Total</span>
-            <span id="spanTotal">R$ 0,00</span>
-          </div>
-        </div>
+      <aside class="resumo" id="resumo-pedido">
         <button class="btn-checkout">
           <span class="material-symbols-outlined">lock</span>
           Finalizar Compra
@@ -97,6 +86,17 @@
       </div>
     </div>
   </footer>
+
+  <div class="compra-concluida-modal">
+    <div class="compra-concluida-modal__conteudo">
+      <h2 class="compra-concluida-modal__titulo">Compra Concluída!</h2>
+      <p class="compra-concluida-modal__mensagem">Obrigado pela sua compra. Abaixo estão os links para acessar seus
+        livros:</p>
+      <ul class="compra-concluida-modal__lista-livros">
+      </ul>
+      <button class="btn-fechar-modal">Fechar</button>
+    </div>
+  </div>
 
   <script src="JavaScript/carrinho.js"></script>
 </body>
