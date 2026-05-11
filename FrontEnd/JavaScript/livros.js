@@ -97,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             titulo: livro.titulo,
             autor: livro.autor,
             preco: livro.preco,
-            urlLink: livro.urlLink
+            urlLink: livro.urlLink,
+            pdfLink: livro.pdfLink
         });
 
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
